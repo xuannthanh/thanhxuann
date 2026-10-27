@@ -25,18 +25,16 @@ description: >- # used by seo meta and the atom feed
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
 url: "https://linhcuphu1-cmd.github.io"
 
-github:
-  username: linhcuphu1-cmd
+url: "https://xuannthanh.github.io"
 
-twitter:
-  username:
+github:
+  username: xuannthanh
 
 social:
   name: Nguyễn Xuân Thành
   email: linhcuphu1@gmail.com
-  fediverse_handle:
   links:
-    - https://github.com/linhcuphu1-cmd
+    - https://github.com/xuannthanh
 
 # Site Verification Settings
 webmaster_verifications:
