@@ -98,3 +98,12 @@ blockquote {
 hr {
   border-color: var(--site-border) !important;
 }
+
+
+@media (min-width: 1200px) {
+  #panel-wrapper {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+}
