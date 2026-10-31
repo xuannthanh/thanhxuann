@@ -84,17 +84,6 @@ a:hover {
   box-shadow: 0 6px 18px rgba(143, 74, 50, 0.16);
 }
 
-#panel-wrapper {
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-@media (max-width: 1199px) {
-  #panel-wrapper {
-    display: none !important;
-  }
-}
 
 blockquote {
   border-left-color: var(--site-orange) !important;
