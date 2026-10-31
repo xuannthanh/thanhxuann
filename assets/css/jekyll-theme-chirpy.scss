@@ -17,7 +17,9 @@ body {
   color: var(--site-ink);
 }
 
-body { font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+body {
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
 
 #sidebar {
   background: linear-gradient(180deg, #fff5ed 0%, #fffaf6 70%, #ffffff 100%) !important;
@@ -27,7 +29,9 @@ body { font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-s
 #sidebar .site-title,
 #sidebar .site-subtitle,
 #sidebar .nav-link,
-#sidebar .nav-link i { color: var(--site-orange-dark) !important; }
+#sidebar .nav-link i {
+  color: var(--site-orange-dark) !important;
+}
 
 #sidebar .nav-link:hover,
 #sidebar .nav-link.active {
@@ -37,19 +41,32 @@ body { font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-s
 
 #main-wrapper,
 #topbar,
-#panel-wrapper { background: var(--site-cream) !important; }
+#panel-wrapper {
+  background: var(--site-cream) !important;
+}
 
-#topbar { border-bottom: 1px solid var(--site-border); }
+#topbar {
+  border-bottom: 1px solid var(--site-border);
+}
 
-h1, h2, h3, h4, h5, h6 { color: var(--site-orange-dark); }
+h1, h2, h3, h4, h5, h6 {
+  color: var(--site-orange-dark);
+}
 
-a { color: var(--site-orange) !important; }
-a:hover { color: #a95536 !important; }
+a {
+  color: var(--site-orange) !important;
+}
+
+a:hover {
+  color: #a95536 !important;
+}
 
 .post-preview,
 .card,
 .content,
-#toc-wrapper { border-color: var(--site-border) !important; }
+#toc-wrapper {
+  border-color: var(--site-border) !important;
+}
 
 .post-preview,
 .card {
@@ -58,8 +75,25 @@ a:hover { color: #a95536 !important; }
 }
 
 #avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50% !important;
+  object-fit: cover;
+  display: block;
   border: 3px solid #edb49a;
   box-shadow: 0 6px 18px rgba(143, 74, 50, 0.16);
+}
+
+#panel-wrapper {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+@media (max-width: 1199px) {
+  #panel-wrapper {
+    display: none !important;
+  }
 }
 
 blockquote {
@@ -72,4 +106,6 @@ blockquote {
   border-left-color: var(--site-orange) !important;
 }
 
-hr { border-color: var(--site-border) !important; }
+hr {
+  border-color: var(--site-border) !important;
+}
