@@ -98,3 +98,10 @@ blockquote {
 hr {
   border-color: var(--site-border) !important;
 }
+
+
+@media (min-width: 700px) {
+  #panel-wrapper {
+    display: block !important;
+  }
+}
