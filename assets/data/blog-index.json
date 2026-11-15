@@ -1,0 +1,29 @@
+---
+layout: null
+---
+{
+  "updated": "{{ site.time | date: '%Y-%m-%d' }}",
+  "factsChecked": "2026-11-15",
+  "cveFacts": {
+    "CVE-2019-8331": {"product":"Bootstrap","score":null,"severity":"unknown","sourceLabel":"CVE record","difficulty":"beginner"},
+    "CVE-2021-41773": {"product":"Apache HTTP Server","score":7.5,"severity":"high","sourceLabel":"CISA ADP · CVSS 3.1","difficulty":"intermediate"},
+    "CVE-2026-41843": {"product":"Spring Framework","score":5.9,"severity":"medium","sourceLabel":"CNA · CVSS 3.1","difficulty":"advanced"},
+    "CVE-2026-127213": {"product":"LearnPress Course Wishlist","score":6.5,"severity":"medium","sourceLabel":"CNA · CVSS 3.1","difficulty":"beginner"}
+  },
+  "posts": [
+    {% assign public_posts = site.posts | where_exp: 'post', 'post.hidden != true' %}
+    {% for post in public_posts %}
+    {
+      "url": {{ post.url | relative_url | jsonify }},
+      "title": {{ post.title | jsonify }},
+      "summary": {{ post.description | default: post.excerpt | markdownify | strip_html | normalize_whitespace | truncate: 280 | jsonify }},
+      "date": {{ post.date | date: '%Y-%m-%d' | jsonify }},
+      "categories": {{ post.categories | jsonify }},
+      "tags": {{ post.tags | jsonify }},
+      "difficulty": {{ post.difficulty | default: '' | jsonify }},
+      "cve": {{ post.cve | default: '' | jsonify }},
+      "product": {{ post.product | default: '' | jsonify }}
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
