@@ -45,7 +45,7 @@ analytics:
 pageviews:
   provider:
 
-theme_mode: light
+theme_mode: dark
 cdn:
 avatar: "/assets/avatar.jpg"
 social_preview_image:
