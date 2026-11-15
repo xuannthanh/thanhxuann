@@ -1,0 +1,215 @@
+/* Midnight ocean. Keep Chirpy's layout and syntax highlighting intact. */
+:root[data-bs-theme='dark'] {
+  color-scheme: dark;
+  --main-bg: #060e1b;
+  --main-border-color: #1a3149;
+  --text-color: #c2d3e5;
+  --text-muted-color: #8ca5bf;
+  --text-muted-highlight-color: #b2cce5;
+  --heading-color: #e2f1ff;
+  --label-color: #b2cce5;
+  --link-color: #69bfff;
+  --link-underline-color: #307cb6;
+  --blockquote-border-color: #287ab2;
+  --blockquote-text-color: #a4bfd9;
+  --button-bg: #0b1b2d;
+  --btn-border-color: #24435f;
+  --btn-backtotop-border-color: #24435f;
+  --btn-backtotop-color: #91cfff;
+  --card-bg: #0b192a;
+  --card-header-bg: #10243a;
+  --card-hover-bg: #112a43;
+  --card-shadow: 0 8px 28px rgb(0 4 14 / 22%), 0 0 0 1px #1a3149;
+  --sidebar-bg: #081323;
+  --sidebar-border-color: #1a3149;
+  --site-title-color: #d9efff;
+  --site-subtitle-color: #89adce;
+  --sidebar-muted-color: #97b2ce;
+  --sidebar-active-color: #93d3ff;
+  --sidebar-hover-bg: #102d47;
+  --sidebar-btn-bg: #0e2339;
+  --sidebar-btn-color: #8ebde0;
+  --avatar-border-color: #4ca8e8;
+  --topbar-bg: rgb(6 14 27 / 88%);
+  --topbar-text-color: #aac4dd;
+  --search-border-color: #24435f;
+  --search-icon-color: #89adce;
+  --input-focus-border-color: #69bfff;
+  --post-list-text-color: #adc4da;
+  --btn-paginator-hover-color: #112a43;
+  --toc-highlight: #69c5ff;
+  --toc-popup-border-color: #24435f;
+  --tag-hover: #153752;
+  --tag-border: #294c69;
+  --tag-shadow: #06101e;
+  --search-tag-bg: #10243a;
+  --categories-border: #1a3149;
+  --categories-hover-bg: #153752;
+  --tb-odd-bg: #0e2034;
+  --tb-even-bg: #091727;
+  --tb-border-color: #1a3149;
+  --timeline-node-bg: #69bfff;
+  --timeline-color: #24435f;
+  --timeline-year-dot-color: #69bfff;
+  --dash-color: #24435f;
+  --language-border-color: #1a3149;
+  --highlight-bg-color: #060f1d;
+  --inline-code-bg: rgb(105 191 255 / 9%);
+  --code-color: #9cd6ff;
+  --code-header-text-color: #97b2ce;
+  --code-header-muted-color: #24435f;
+  --code-header-icon-color: #89adce;
+  --menu-bg: #0b192a;
+  --menu-border-color: #24435f;
+  --menu-highlight-bg: #153752;
+  --mask-bg: #020811;
+}
+
+body {
+  background: radial-gradient(ellipse at 80% 0%, #0b2540 0, transparent 48%), var(--main-bg);
+}
+
+::selection {
+  color: #eff8ff;
+  background: #236594;
+}
+
+#sidebar {
+  background: linear-gradient(165deg, #0d2440 0%, #081323 48%, #060e1b 100%);
+  border-right: 1px solid var(--sidebar-border-color);
+}
+
+#sidebar #avatar {
+  box-shadow: 0 0 0 3px #1a4568, 0 0 28px rgb(72 166 232 / 18%);
+}
+
+#sidebar .site-title {
+  color: #d9efff;
+}
+
+#sidebar .nav-item.active .nav-link {
+  box-shadow: inset 3px 0 #69bfff;
+  background: linear-gradient(90deg, #153752, #0c2238);
+}
+
+#topbar-wrapper {
+  border-bottom: 1px solid rgb(105 191 255 / 9%);
+  backdrop-filter: blur(12px);
+}
+
+#post-list .card-wrapper {
+  border: 1px solid #1a3651;
+  border-radius: 1rem;
+  background: linear-gradient(120deg, #10243a, #0a1728 75%);
+  box-shadow: 0 8px 28px rgb(0 4 14 / 20%);
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+#post-list .card-wrapper:hover {
+  border-color: #397cae;
+  box-shadow: 0 12px 32px rgb(0 4 14 / 30%), 0 0 18px rgb(66 159 227 / 8%);
+  transform: translateY(-2px);
+}
+
+#post-list .card-title {
+  color: #dcefff;
+}
+
+#post-list .post-preview:hover .card-title {
+  color: #82ccff;
+}
+
+.post-tag {
+  background: #0c2136;
+}
+
+.highlight,
+.highlight .w,
+.highlight .gh {
+  background-color: var(--highlight-bg-color);
+}
+
+#archives li:nth-child(odd) {
+  background-image: linear-gradient(90deg, transparent, #10243a, transparent);
+}
+
+/* Decorative layer never intercepts links, scrolling, or text selection. */
+.ocean-leaves {
+  position: fixed;
+  inset: 0;
+  z-index: 4;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+}
+
+.ocean-leaf {
+  position: absolute;
+  top: -48px;
+  left: var(--left);
+  width: var(--size);
+  height: calc(var(--size) * 1.6);
+  opacity: 0;
+  animation: ocean-fall var(--fall) var(--delay) linear infinite;
+  will-change: transform;
+}
+
+.ocean-leaf svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  color: var(--leaf-color);
+  animation: ocean-flutter var(--flutter) ease-in-out infinite alternate;
+}
+
+@keyframes ocean-fall {
+  0% { transform: translate3d(0, -5vh, 0) rotate(0deg); opacity: 0; }
+  10% { opacity: var(--opacity); }
+  88% { opacity: var(--opacity); }
+  100% { transform: translate3d(var(--drift), calc(100vh + 100px), 0) rotate(var(--turn)); opacity: 0; }
+}
+
+@keyframes ocean-flutter {
+  from { transform: translateX(-16px) rotate(-24deg) rotateY(-30deg); }
+  to { transform: translateX(16px) rotate(24deg) rotateY(35deg); }
+}
+
+.ocean-leaves.is-paused .ocean-leaf,
+.ocean-leaves.is-paused svg {
+  animation-play-state: paused;
+}
+
+.ocean-leaves-toggle {
+  position: fixed;
+  right: 1rem;
+  bottom: 5.25rem;
+  z-index: 5;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  border: 1px solid #305676;
+  border-radius: 50%;
+  background: #0b1b2d;
+  color: #88ceff;
+  box-shadow: 0 4px 18px rgb(0 4 14 / 25%);
+  cursor: pointer;
+}
+
+.ocean-leaves-toggle:hover { background: #153752; }
+.ocean-leaves-toggle[aria-pressed='true'] { color: #8ca5bf; }
+.ocean-leaves-toggle:focus-visible { outline: 2px solid #88ceff; outline-offset: 4px; }
+.ocean-leaves-toggle svg { width: 100%; height: 100%; }
+
+@media (max-width: 767px) {
+  .ocean-leaf:nth-child(n + 9) { display: none; }
+  .ocean-leaves-toggle { right: 0.75rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ocean-leaves, .ocean-leaves-toggle { display: none; }
+  #post-list .card-wrapper { transition: none; }
+  #post-list .card-wrapper:hover { transform: none; }
+}
